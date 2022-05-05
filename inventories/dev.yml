@@ -9,4 +9,8 @@
 172.31.17.188 ansible_ssh_user='ubuntu'
 
 [lb]
+<<<<<<< HEAD
 172.31.22.95 ansible_ssh_user='ubuntu'
+=======
+172.31.22.95 ansible_ssh_user='ubuntu'
+>>>>>>> 172e09a5bd5463a2ecfc03a52fd3693fd909c275

@@ -23,4 +23,8 @@
     - name: ensure wireshark is at the latest version
       apt:
         name: wireshark
+<<<<<<< HEAD
         state: latest
+=======
+        state: latest
+>>>>>>> 172e09a5bd5463a2ecfc03a52fd3693fd909c275

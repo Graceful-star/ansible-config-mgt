@@ -14,13 +14,15 @@
 - name: clone a repo
   become: true
   ansible.builtin.git:
-    repo: https://github.com/Graceful-star/tooling.git
-    dest: /var/www/html
+    repo: https://github.com/Graceful-star/tooling-1.git
+    dest: /home/ec2-user/
     force: yes
 
 - name: copy html content to one level up
-  become: true
-  shell: cp -R /var/www/html/html/ /var/www/
+  ansible.builtin.copy:
+    src: /home/ec2-user/
+    dest: /var/www/html
+    remote_src: yes
 
 - name: Start service httpd, if not started
   become: true
@@ -28,8 +30,8 @@
     name: httpd
     state: started
 
-- name: recursively remove /var/www/html/html/ directory
+- name: recursively remove /var/www/html/ directory
   become: true
   ansible.builtin.file:
-    path: /var/www/html/html
+    path: /var/www/html
     state: absent 

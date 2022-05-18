@@ -18,3 +18,5 @@
 - name: import loadbalancers file
   import_playbook: ../static-assignments/lb.yml
   when: loadbalancer_is_required
+
+  
